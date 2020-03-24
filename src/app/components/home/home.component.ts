@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges, DoCheck, AfterContentInit,
+  AfterContentChecked, AfterViewInit, AfterViewChecked, OnDestroy } from '@angular/core';
 
+// tslint:disable-next-line: no-conflicting-lifecycle
 @Component({
   selector: 'app-home',
   template: `
@@ -19,11 +21,38 @@ import { Component, OnInit } from '@angular/core';
   `,
   styles: []
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, OnChanges, DoCheck, AfterContentInit,
+AfterContentChecked, AfterViewInit, AfterViewChecked, OnDestroy {
 
-  constructor() { }
+  constructor() {
+    console.log('constructor');
+  }
 
   ngOnInit(): void {
+    console.log('ngOnInit');
   }
+
+  ngOnChanges(){
+    console.log('ngOnChanges');
+  }
+  ngDoCheck(){
+    console.log('ngDoCheck');
+  }
+  ngAfterContentInit(){
+    console.log('ngAfterContentInit');
+  }
+  ngAfterContentChecked(){
+    console.log('ngAfterContentChecked');
+  }
+  ngAfterViewInit() {
+    console.log('ngAfterViewInit');
+  }
+  ngAfterViewChecked(){
+    console.log('ngAfterViewChecked');
+  }
+  ngOnDestroy(){
+    console.log('ngOnDestroy');
+  }
+
 
 }
